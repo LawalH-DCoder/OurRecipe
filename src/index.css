@@ -1,8 +1,18 @@
+@import "tailwindcss";
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  --accent: #8b5e3c;
+  --font-serif-display: "DM Serif Display", serif;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f4f2;
+  --bg-page: #faf7f2;
+  --text-primary: #1a1814;
+  --text-secondary: #6b6560;
+  --text-tertiary: #a8a49f;
+  --border-light: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.14);
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -28,6 +38,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-page);
+  font-family: "DM Sans", sans-serif;
 }
 
 h1 {

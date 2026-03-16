@@ -1,8 +1,7 @@
 function Home() {
   return (
-    <div>
-      <h1> Welcome to the Recipe App</h1>
-      <p>Discover and share amazing recipes.</p>
+    <div className="text-[66px] tracking-[-2.5px] font-bold [font-family:var(--font-serif-display)]">
+      The recipe app for every home chef!
     </div>
   );
 }
