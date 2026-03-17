@@ -27,7 +27,8 @@ const SearchList = ({ initialTerm }: SearchListProps) => {
         setActiveTerm(initialTerm);
     }, [initialTerm]);
 
-    const handleSearch = () => {
+    const handleSearch = (e: React.FormEvent<HTMLButtonElement>) => {
+        e.preventDefault();
         const normalized = inputTerm.trim();
         if (!normalized) return;
         setActiveTerm(normalized);
@@ -36,8 +37,8 @@ const SearchList = ({ initialTerm }: SearchListProps) => {
     console.log("API Data:", data, error, loading);
     // transform API → UI format
     if (loading) return <p>Loading...</p>;
-    if (error === null && !data?.meals) return <>
-        <div className='input-button'>
+    if ( typeof data?.meals === "string" && error === null) return <>
+        <div className='input-button mt-[150px] mx-[75px]' >
             <input
                 type='text'
                 placeholder='Search recipes...'
@@ -46,7 +47,7 @@ const SearchList = ({ initialTerm }: SearchListProps) => {
             />
             <button onClick={handleSearch}>Search</button>
         </div>
-        <p>No data found</p>
+        <p className="mx-[75px]">No data found</p>
     </>;
     const meals: IMeal[] =
         data?.meals?.slice(0, 20).map((item) => ({
