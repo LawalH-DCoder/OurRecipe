@@ -27,9 +27,8 @@ const RecipeOfMoment = () => {
         randomItem.strDescription ??
         `${randomItem.strIngredient} is a versatile ingredient you can use in a variety of dishes.`,
       category: randomItem.strType ?? "Ingredient",
-      prepTime: `${10 + Math.floor(Math.random() * 20)} mins`,
+      prepTime: `10 mins`,
       servings: 1 + Math.floor(Math.random() * 4),
-      difficulty: "Easy",
       chef: "Community Recipe",
       ingredients: [randomItem.strIngredient, "Salt", "Olive Oil", "Garlic"],
       thumbnail: randomItem.strThumb,

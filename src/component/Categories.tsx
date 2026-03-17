@@ -17,6 +17,19 @@ const Categories = () => {
 
   const categories = data?.categories ?? [];
 
+      if (loading) return <div className="flex gap-4">
+          {Array.from({length}).map((_, i) => (
+            <div key={i} className="flex flex-col items-center gap-3 w-30">
+              <div className="w-30 h-30 rounded-full bg-neutral-200 animate-pulse" />
+              <div className="w-16 h-3 rounded bg-neutral-200 animate-pulse" />
+            </div>
+          ))}
+        </div>
+
+        if (error) return  <p className="text-sm text-red-600">
+          Failed to load categories. Please try again.
+        </p>
+
   return (
     <section className="w-full max-w-360 mx-auto md:px-12 sm:px-8 px-4 py-10 overflow-hidden">
       <div className="mb-8">
@@ -28,27 +41,6 @@ const Categories = () => {
           Browse by Categories </h2>
       </div>
 
-    
-      {loading && (
-        <div className="flex gap-4">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="flex flex-col items-center gap-3 w-30">
-              <div className="w-30 h-30 rounded-full bg-neutral-200 animate-pulse" />
-              <div className="w-16 h-3 rounded bg-neutral-200 animate-pulse" />
-            </div>
-          ))}
-        </div>
-      )}
-
-   {/* error */}
-      {error && (
-        <p className="text-sm text-red-500">
-          Failed to load categories. Please try again.
-        </p>
-      )}
-
-      {/* Data  */}
-      {!loading && !error && (
         <div className="relative">
           <div className="pointer-events-none absolute left-0 top-0 h-full w-8 z-10 bg-gradient-to-r from-white to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 h-full w-16 z-10 bg-gradient-to-l from-white to-transparent" />
@@ -80,7 +72,7 @@ const Categories = () => {
             <SwiperSlide className="!w-8 pointer-events-none" />
           </Swiper>
         </div>
-      )}
+
     </section>
   );
 };

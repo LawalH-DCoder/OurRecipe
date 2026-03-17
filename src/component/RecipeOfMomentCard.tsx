@@ -59,10 +59,10 @@ const RecipeOfMomentCard: React.FC<Props> = ({ recipe }) => {
       </div>
 
 
-      <div className="flex flex-col justify-between p-8 md:p-10 bg-[var(--bg-secondary)]">
+      <div className="flex flex-col justify-between p-8 md:p-10 bg-[var(--bg-secondary)] gap-5">
         <div>
          
-          <p className="text-[6rem] leading-none mb-[-1rem] select-none text-[var(--border-light)] font-[var(--font-serif-display)]">
+          <p className="text-[6rem] leading-none mb-4 select-none text-[var(--border-light)] font-[var(--font-serif-display)]">
             01
           </p>
 
@@ -76,7 +76,7 @@ const RecipeOfMomentCard: React.FC<Props> = ({ recipe }) => {
             {description}
           </p>
 
-          <div className="w-10 h-[2px] mb-6 rounded-full bg-[#F97316]" />
+          <div className="w-10 h-0.5 mb-6 rounded-full bg-[#F97316]" />
 
 
           <div className="flex flex-wrap gap-2 mb-8">
