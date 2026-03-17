@@ -4,7 +4,7 @@
   line-height: 1.5;
   font-weight: 400;
   --accent: #8b5e3c;
-  --font-serif-display: "DM Serif Display", serif;
+  --font-serif-display: "Playfair Display", serif;
   --bg-primary: #ffffff;
   --bg-secondary: #f5f4f2;
   --bg-page: #faf7f2;
@@ -15,6 +15,8 @@
   --border-medium: rgba(0, 0, 0, 0.14);
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
+  --color-lime: #f97316;
+  --color-accent: #f97316;
   background-color: #242424;
 
   font-synthesis: none;
@@ -39,7 +41,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--bg-page);
-  font-family: "DM Sans", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 h1 {

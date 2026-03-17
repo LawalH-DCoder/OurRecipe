@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../component/shared/Navbar";
+import Footer from "./shared/Footer";
 
 function AppLayout() {
   return (
@@ -10,9 +11,7 @@ function AppLayout() {
       <main className="flex-1">
         <Outlet />
       </main>
-      <footer>
-        
-      </footer>
+      <Footer />
     </div>
   );
 }
