@@ -43,8 +43,12 @@ const DiscoveryCard: React.FC<Props> = ({ meal }) => {
 
       <div className="flex flex-col gap-2 pt-1">
         <h3 className="text-sm font-bold leading-snug text-[var(--text-primary)] group-hover:text-[#F97316] transition-colors duration-150">
-          {name}
-        </h3>
+  {name}
+</h3>
+
+        <div >
+          <p className="text-black text-sm truncate w-64">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae veniam, delectus quaerat aspernatur odio blanditiis eligendi neque itaque, quasi quis quas excepturi necessitatibus dolores nemo distinctio. Laborum dignissimos eveniet placeat?</p>
+        </div>
 
         <StarRating rating={rating} count={ratingCount ?? 0} />
       </div>
