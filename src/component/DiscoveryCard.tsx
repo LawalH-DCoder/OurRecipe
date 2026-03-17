@@ -33,7 +33,7 @@ const DiscoveryCard: React.FC<Props> = ({ meal }) => {
       onClick={() => navigate(`/meal/${id}`)}
       className="flex items-start gap-4 cursor-pointer group"
     >
-      <div className="w-[90px] h-[90px] rounded-xl overflow-hidden shrink-0">
+      <div className="w-25 h-25 rounded-xl overflow-hidden shrink-0">
         <img
           src={thumbnail}
           alt={name}

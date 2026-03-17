@@ -41,7 +41,7 @@ const RecipeOfMoment = () => {
     setRecipe(transformed);
   }, [data]);
 
-  if (loading) return <p>Loading recipe of the moment...</p>;
+  if (loading) return <div className="w-6 h-6 border-2 border-gray-500 border-t-transparent rounded-full animate-spin"></div>;
   if (error || !recipe) return <p className="text-red-600 font-bold">Failed to load</p>;
 
   return (

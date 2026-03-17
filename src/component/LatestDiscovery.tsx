@@ -21,7 +21,7 @@ const LatestDiscovery = () => {
       thumbnail: item.strThumb,
     })) ?? [];
 
-  if (loading) return <p >Loading...</p>;
+  if (loading) return <div className="w-6 h-6 border-2 border-gray-500 border-t-transparent rounded-full animate-spin"></div>;
   if (error) return <p className="font-bold text-red-600">Error loading data</p>;
 
   return (
