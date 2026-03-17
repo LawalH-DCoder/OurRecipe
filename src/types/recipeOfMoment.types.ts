@@ -5,7 +5,6 @@ export interface IRecipeOfMoment {
   category: string;
   prepTime: string;
   servings: number;
-  difficulty: "Easy" | "Medium" | "Hard";
   chef: string;
   ingredients: string[];
   thumbnail: string;
