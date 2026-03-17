@@ -23,10 +23,10 @@ const RecipeOfMomentCard: React.FC<Props> = ({ recipe }) => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden border border-[gainsboro] bg-[var(--bg-primary)]">
-      
-     
-      <div className="relative min-h-90 md:min-h-120
-      |t rgb">
+      <div
+        className="relative min-h-90 md:min-h-120
+      |t rgb"
+      >
         <img
           src={thumbnail}
           alt={name}
@@ -35,12 +35,10 @@ const RecipeOfMomentCard: React.FC<Props> = ({ recipe }) => {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-  
         <span className="absolute top-5 left-5 text-white text-[10px] font-bold tracking-[2px] uppercase px-3 py-1.5 rounded-full bg-[#F97316]">
           {category}
         </span>
 
- 
         <div className="absolute bottom-5 left-5 right-5 flex items-center gap-3 flex-wrap">
           <div className="flex items-center gap-1.5 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5">
             <Clock size={12} className="text-white" />
@@ -58,26 +56,21 @@ const RecipeOfMomentCard: React.FC<Props> = ({ recipe }) => {
         </div>
       </div>
 
-
       <div className="flex flex-col justify-between p-8 md:p-10 bg-[var(--bg-secondary)] gap-5">
         <div>
-         
-          <p className="text-[6rem] leading-none mb-4 select-none text-[var(--border-light)] font-[var(--font-serif-display)]">
+          <p className="text-[6rem] leading-none mb-4 select-none text-[var(--border-light)] !font-[var(--font-serif-display)]">
             01
           </p>
 
-        
           <h3 className="text-[1.85rem] font-bold leading-tight mb-3 tracking-[-0.5px] text-[var(--text-primary)]">
             {name}
           </h3>
 
-   
           <p className="text-sm leading-relaxed mb-6 text-[var(--text-secondary)] line-clamp-4">
             {description}
           </p>
 
           <div className="w-10 h-0.5 mb-6 rounded-full bg-[#F97316]" />
-
 
           <div className="flex flex-wrap gap-2 mb-8">
             {ingredients.map((item, index) => (
