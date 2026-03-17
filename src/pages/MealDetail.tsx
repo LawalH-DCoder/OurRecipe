@@ -1,55 +1,35 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Youtube } from "lucide-react";
 import MealDetailHeader from "../component/MealDetailHeader";
 import MealDetailBody from "../component/MealDetailBody";
-import type { IMealDetail, IRawMeal } from "../types/mealDetail.types";
+import type {
+  IMealDetail,
+  IRawMeal,
+  IRandomMealResponse,
+} from "../types/mealDetail.types";
 import { transformMeal } from "../lib/mealDetailUtils";
+import { useFetch } from "../hooks/use-fetch";
+import MealDetailSkeleton from "../component/MealDetailSkeleton";
 
 const MealDetail = () => {
-  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const [meal, setMeal] = useState<IMealDetail | null>(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (!id) return;
-    setLoading(true);
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        const raw: IRawMeal = data.meals?.[0];
-        if (raw) setMeal(transformMeal(raw));
-      })
-      .finally(() => setLoading(false));
-  }, [id]);
+  const { data, loading, error } = useFetch<IRandomMealResponse>(
+    "https://www.themealdb.com/api/json/v1/1/random.php",
+  );
 
-  if (loading) {
+  const rawMeal: IRawMeal | undefined = data?.meals?.[0];
+  const meal: IMealDetail | null = rawMeal ? transformMeal(rawMeal) : null;
+
+  if (loading) return <MealDetailSkeleton />;
+
+  if (error || !meal) {
     return (
       <div
         className="min-h-screen flex items-center justify-center"
         style={{ backgroundColor: "var(--bg-page)" }}
       >
-        <div className="flex flex-col items-center gap-3">
-          <div
-            className="w-10 h-10 rounded-full border-2 animate-spin"
-            style={{ borderColor: "#F97316", borderTopColor: "transparent" }}
-          />
-          <p className="text-sm" style={{ color: "var(--text-tertiary)" }}>
-            Loading recipe…
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!meal) {
-    return (
-      <div
-        className="min-h-screen flex items-center justify-center"
-        style={{ backgroundColor: "var(--bg-page)" }}
-      >
-        <p style={{ color: "var(--text-secondary)" }}>Recipe not found.</p>
+        <p style={{ color: "var(--text-secondary)" }}>Failed to load recipe.</p>
       </div>
     );
   }
@@ -57,7 +37,6 @@ const MealDetail = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "var(--bg-page)" }}>
       <div className="max-w-[1440px] mx-auto md:px-12 sm:px-8 px-4 py-8">
-        {/* Top bar: back + youtube */}
         <div className="flex items-center justify-between mb-8">
           <button
             onClick={() => navigate(-1)}
@@ -85,16 +64,13 @@ const MealDetail = () => {
           )}
         </div>
 
-        {/* Header: image left + meta right */}
         <MealDetailHeader meal={meal} />
 
-        {/* Divider */}
         <div
           className="w-full h-px my-10"
           style={{ backgroundColor: "var(--border-light)" }}
         />
 
-        {/* Tabbed body: ingredients + instructions */}
         <MealDetailBody meal={meal} />
       </div>
     </div>
