@@ -9,3 +9,16 @@ export interface IMeal {
   thumbnail: string;
   featured?: boolean;
 }
+
+export interface ApiIngredient {
+  idIngredient: string;
+  strIngredient: string;
+  strDescription: string | null;
+  strThumb: string;
+  strType: string | null;
+}
+
+export interface ApiResponse {
+  meals: ApiIngredient[];
+}
+
