@@ -26,28 +26,28 @@ const StarRating = ({ rating, count }: { rating: number; count: number }) => (
 
 const DiscoveryCard: React.FC<Props> = ({ meal }) => {
   const navigate = useNavigate();
-  const { id, name, thumbnail, rating, ratingCount } = meal;
+  const { id, name, thumbnail, rating, ratingCount, mealName, instructions, mealThumb } = meal;
 
   return (
     <div
       onClick={() => navigate(`/meal/${id}`)}
-      className="flex items-start gap-4 cursor-pointer group"
+      className="flex items-start gap-4 cursor-pointer group w-[70%]"
     >
       <div className="w-[90px] h-[90px] rounded-xl overflow-hidden shrink-0">
         <img
-          src={thumbnail}
-          alt={name}
+          src={thumbnail || mealThumb }
+          alt={name || mealName}
           className="w-full h-full object-cover"
         />
       </div>
 
       <div className="flex flex-col gap-2 pt-1">
         <h3 className="text-sm font-bold leading-snug text-[var(--text-primary)] group-hover:text-[#F97316] transition-colors duration-150">
-  {name}
+  {name || mealName}
 </h3>
 
         <div >
-          <p className="text-black text-sm truncate w-64">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae veniam, delectus quaerat aspernatur odio blanditiis eligendi neque itaque, quasi quis quas excepturi necessitatibus dolores nemo distinctio. Laborum dignissimos eveniet placeat?</p>
+          <p className="text-black text-sm truncate w-64">{instructions}</p>
         </div>
 
         <StarRating rating={rating} count={ratingCount ?? 0} />
