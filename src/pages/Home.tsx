@@ -1,13 +1,12 @@
 import Categories from "../component/Categories";
 import LatestDiscovery from "../component/LatestDiscovery";
 import RecipeOfMoment from "../component/RecipeOfMoment";
+import HeroSection from "../component/shared/HeroSection";
 
 function Home() {
   return (
     <>
-      <div className="text-[66px] tracking-[-2.5px] font-bold">
-        The recipe app for every home chef!
-      </div>
+      <HeroSection />
       <Categories />
       <RecipeOfMoment />
       <LatestDiscovery />
