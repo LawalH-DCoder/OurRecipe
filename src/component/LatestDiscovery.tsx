@@ -2,27 +2,26 @@ import { ChevronRight } from "lucide-react";
 import DiscoveryCard from "./DiscoveryCard";
 import { useFetch } from "../hooks/use-fetch";
 import type { ApiResponse, IMeal } from "../types/discovery.types";
-
+import Loader from "./shared/Loader";
 
 const LatestDiscovery = () => {
   const { data, loading, error } = useFetch<ApiResponse>(
-    "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
+    "https://www.themealdb.com/api/json/v1/1/list.php?i=list",
   );
 
-  // transform API → UI format
   const meals: IMeal[] =
     data?.meals.slice(0, 20).map((item) => ({
       id: item.idIngredient,
       name: item.strIngredient,
       category: item.strType ?? "Ingredient",
       prepTime: "—",
-      rating: Math.random() * 5, // fake for now
+      rating: Math.random() * 5,
       ratingCount: Math.floor(Math.random() * 200),
       author: "ThemealDB",
       thumbnail: item.strThumb,
     })) ?? [];
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader text="Loading discoveries..." />;
   if (error) return <p>Error loading data</p>;
 
   return (
