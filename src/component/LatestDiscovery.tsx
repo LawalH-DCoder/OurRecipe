@@ -9,21 +9,20 @@ const LatestDiscovery = () => {
     "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
   );
 
-  // transform API → UI format
   const meals: IMeal[] =
     data?.meals.slice(0, 20).map((item) => ({
       id: item.idIngredient,
       name: item.strIngredient,
       category: item.strType ?? "Ingredient",
       prepTime: "—",
-      rating: Math.random() * 5, // fake for now
+      rating: Math.random() * 5, 
       ratingCount: Math.floor(Math.random() * 200),
       author: "ThemealDB",
       thumbnail: item.strThumb,
     })) ?? [];
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error loading data</p>;
+  if (loading) return <p >Loading...</p>;
+  if (error) return <p className="font-bold text-red-600">Error loading data</p>;
 
   return (
     <section className="w-full max-w-360 mx-auto md:px-12 sm:px-8 px-4 py-10">
