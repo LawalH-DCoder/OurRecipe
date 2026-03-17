@@ -8,6 +8,10 @@ export interface IMeal {
   author: string;
   thumbnail: string;
   featured?: boolean;
+  mealName?: string;
+  mealThumb?: string;
+  instructions?: string;
+  
 }
 
 export interface ApiIngredient {
@@ -16,6 +20,9 @@ export interface ApiIngredient {
   strDescription: string | null;
   strThumb: string;
   strType: string | null;
+  strMeal: string;
+  strMealThumb: string;
+  strInstructions: string;
 }
 
 export interface ApiResponse {
