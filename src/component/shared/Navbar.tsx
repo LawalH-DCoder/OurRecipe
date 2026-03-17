@@ -4,7 +4,7 @@ import "./navbar.css";
 function Navbar() {
   return (
     <nav className="navbar ">
-     <h2 className="text-2xl font-bold text-white">
+     <h2 className="text-2xl font-bold text-white" onClick={() => <Link to="/" />}>
               Recip
               <em className="not-italic italic text-[#F97316]">io</em>
             </h2>
