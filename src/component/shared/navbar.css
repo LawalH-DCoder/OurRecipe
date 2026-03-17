@@ -2,17 +2,20 @@
 .navbar {
     display: flex;
     position: fixed;
+    justify-self: center;
     justify-content: space-between;
-    top: 0;
+    top: 20px;
     height: 64px;
-    background-color: white;
-    margin: 0;
+    background-color: black;
+    margin: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     z-index: 10;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     padding: 0 40px;
     align-items: center;
-    width: 95%;
+    width: 75%;
 }
 
 .navbar-logo {
@@ -23,7 +26,7 @@
 }
 
 .navbar-logo span {
-    color: #1A1814;
+    color: white;
 }
 
 .navbar-links {
@@ -35,7 +38,7 @@
 }
 
 .navbar-link {
-    color: #6B6560;
+    color: white;
     text-decoration: none;
 }
 
@@ -59,7 +62,7 @@
 }
 
 .navbar-button {
-    background-color: #C2622A;
+    background-color: #F97316;
     border: none;
     color: white;
     padding: 10px 20px;
