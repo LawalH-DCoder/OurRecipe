@@ -22,7 +22,9 @@ const LatestDiscovery = () => {
     })) ?? [];
 
   if (loading) return <Loader text="Loading discoveries..." />;
-  if (error) return <p>Error loading data</p>;
+
+  if (error)
+    return <p className="font-bold text-red-600">Error loading data</p>;
 
   return (
     <section className="w-full max-w-360 mx-auto md:px-12 sm:px-8 px-4 py-10">
