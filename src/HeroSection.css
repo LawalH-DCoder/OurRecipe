@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.herosection-container {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('/src/assets/background-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 70px;
+    background-color: rgba(0, 0, 0, 0.9);
+   
+
+}
+
+.herosection-content #top-intro {
+    border-radius: 20px;
+    font-family: "Montserrat", sans-serif;
+    padding: 5px 15px;
+    border: none;
+    font-size: 8px;
+    font-weight: 600;
+    background-color: #C2622A;
+    color: wheat;
+}
+
+.herosection-content h1 {
+    font-size: 50px;
+    max-width: 600px;
+    line-height: 57px;
+    color: white;
+    margin: 20px 0px;
+}
+
+.herosection-content p {
+    font-size: 13px;
+    max-width: 400px;
+    line-height: 23px;
+    color: #fefae0;
+}
+
+.herosection-content .input-button {
+    margin: 30px 0px ;
+}
+
+.input-button input[type='text'] {
+    background-color: #fefae0;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    width: 20%;
+}
+
+.input-button button {
+    background-color: #C2622A;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    color: #fefae0;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    margin-left: -50px;
+    cursor: pointer;
+}

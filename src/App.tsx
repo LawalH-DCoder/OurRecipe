@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
+import HeroSection from "./component/shared/HeroSection";
 
 function App() {
   return (
