@@ -4,13 +4,16 @@ import Home from "./pages/Home";
 import AppLayout from "./component/Layout";
 import MealDetail from "./pages/MealDetail";
 import SearchListPage from "./pages/SearchList";
+import Effect from "./pages/Effect";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="searchList" element={<SearchListPage />} />
+        <Route path="effect" element={<Effect />} />
         <Route path="meal/:id" element={<MealDetail />} />
         <Route path="*" element={<NotFound />} />
       </Route>

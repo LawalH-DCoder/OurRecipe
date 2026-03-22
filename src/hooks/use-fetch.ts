@@ -6,9 +6,13 @@ export const useFetch = <T>(url: string) => {
   const [error, setError] = useState<string | null | Error>(null);
 
   useEffect(() => {
+    const abortController = new AbortController();
+
     const makeApiCall = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+          signal: abortController.signal,
+        });
         const result: T = await response.json();
         setData(result);
       } catch (err) {
@@ -19,6 +23,10 @@ export const useFetch = <T>(url: string) => {
     };
 
     makeApiCall();
+    
+    return () => {
+      abortController.abort();
+    };
   }, [url]);
 
   return { data, loading, error };

@@ -4,6 +4,7 @@ export interface IRecipeOfMoment {
   description: string;
   category: string;
   prepTime: string;
+  difficulty?:string;
   servings: number;
   chef: string;
   ingredients: string[];

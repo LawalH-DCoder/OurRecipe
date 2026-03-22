@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { IRawMeal, IMealDetail } from "../types/mealDetail.types";
 
 export const transformMeal = (raw: IRawMeal): IMealDetail => {
